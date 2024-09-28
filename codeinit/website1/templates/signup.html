@@ -1,0 +1,190 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index copy.css">
+    <title>Document</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+
+</head>
+
+<body>
+    <div class="index">
+
+        <div class="navbar">
+
+            <h2 class="home">CodeInit</h2>
+            <div class="options">
+                <p class="dw">Overview</p>
+                <p class="dw">About</p>
+                <p class="dw">Working</p>
+            </div>
+
+
+        </div>
+
+        <div class="intro">
+
+            <h1 class="title">The FairPlay Cypher.</h1>
+            <div class="intropara">A departure from traditional rote memorization,
+                modern schools emphasize project-based learning.
+                Students are encouraged to tackle real-world problems
+                and engage in hands-on projects that require critical
+                thinking, problem-solving, and collaboration. This approach
+                not only fosters a deeper understanding of subject matter
+                but also equips students with practical skills and the ability
+                to apply their knowledge in meaningful ways.A departure from traditional rote memorization,
+                modern schools emphasize project-based learning.</div>
+
+
+
+
+        </div>
+
+        <div class="third">
+
+            <div class="third-para">
+
+                <form action="/signup" method="POST">{% csrf_token %}
+                    <div class="input1">
+                        <label for="inputBox2"><b>Enter your Sentence:</b></label>
+                        <input type="text" id="inputBox" class="inpu1" name="inputBox1" value={{default1}}>
+                    </div>
+
+                    <div class="input2">
+                        <h1></h1>
+                        <label for="inputBox1"><b>Enter your key:</b></label>
+                        <input type="text" id="inputBox" class="inpu1" name="inputBox2" value={{default2}}>
+                    </div>
+                    <div class="buttons">
+                        <button class="submit" name="action" value="0" 
+                            style="font-family: 'Inclusive Sans' ;font-style: oblique ; font-size: large;"><b>Encrypt</b></button>
+                        <button class="submit" value=1 name="action"
+                            style="font-family: 'Inclusive Sans'; font-style: oblique ; font-size: large;"><b>Decrypt</b></button>
+
+                    </div>
+
+                </form>
+
+                {% if output_data %}
+                <h2>Output:</h2>
+
+                <p>{{output_data}}</p>
+                {% endif %}
+
+
+            </div>
+
+            <div class="third-scroll">
+
+
+                <h1 class="heading2" style=" display:flex; justify-content:  space-around; font-family: 'Inclusive Sans', sans-serif;  margin-left: 30px;">
+                    Matrix Representation
+                </h1>
+
+                <div class="pc-output-value l9" style="display:flex; justify-content:  space-around;" id="dialogv6411c5581d498_square">
+
+                    <table class="matrix-table" width="100px">
+                        <tbody>
+                            <tr>
+                                <td>{{output_data_1}}</td>
+                                <td>{{output_data_2}}</td>
+                                <td>{{output_data_3}}</td>
+                                <td>{{output_data_4}}</td>
+                                <td>{{output_data_5}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{output_data_6}}</td>
+                                <td>{{output_data_7}}</td>
+                                <td>{{output_data_8}}</td>
+                                <td>{{output_data_9}}</td>
+                                <td>{{output_data_10}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{output_data_11}}</td>
+                                <td>{{output_data_12}}</td>
+                                <td>{{output_data_13}}</td>
+                                <td>{{output_data_14}}</td>
+                                <td>{{output_data_15}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{output_data_16}}</td>
+                                <td>{{output_data_17}}</td>
+                                <td>{{output_data_18}}</td>
+                                <td>{{output_data_19}}</td>
+                                <td>{{output_data_20}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{output_data_21}}</td>
+                                <td>{{output_data_22}}</td>
+                                <td>{{output_data_23}}</td>
+                                <td>{{output_data_24}}</td>
+                                <td>{{output_data_25}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="fourth">
+
+            <h1 class="man">Our Programmes</h1>
+            <p class="pone">
+                Recognizing that success in the 21st century
+                job market requires more than just academic
+                knowledge, modern schools place a strong
+                emphasis on the development of soft skills.
+                Communication, teamwork, adaptability, and resilience
+                are considered crucial attributes that students should have.
+                Recognizing that success in the 21st century
+                job market requires more than just academic
+                knowledge, modern schools place a strong
+                emphasis on the development of soft skills.
+                Communication, teamwork, adaptability, and resilience
+                are considered crucial attributes that students should haveRecognizing that success in the 21st
+                century
+                job market requires more than just academic
+                knowledge, modern schools place a strong
+                emphasis on the development of soft skills.
+                Communication, teamwork, adaptability, and resilience
+                are considered crucial attributes that students should have.
+                Recognizing that success in the 21st century
+                job market requires more than just academic
+                knowledge, modern schools place a strong
+                emphasis on the development of soft skills.
+                Communication, teamwork, adaptability, and resilience
+                are considered crucial attributes that students should have.
+            </p>
+
+        </div>
+
+        <div class="fifth">Powered by richie@955</div>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encode and Decode</title>
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .box {
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .input-container label {
+        margin-bottom: 5px;
+    }
+
+    .input-container input {
+        margin-bottom: 5px;
+    }
+
+    .output-container {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box input-container">
+        <label for="key">Key:</label>
+        <input type="text" id="key" placeholder="Enter key">
+        <label for="sentence">Sentence:</label>
+        <input type="text" id="sentence" placeholder="Enter sentence">
+        <button onclick="encode()">Encode</button>
+    </div>
+    <div class="box input-container">
+        <label for="key">Key:</label>
+        <input type="text" id="key2" placeholder="Enter key">
+        <label for="sentence">Sentence:</label>
+        <input type="text" id="sentence2" placeholder="Enter sentence">
+        <button onclick="decode()">Decode</button>
+    </div>
+</div>
+
+<div class="container output-container">
+    <div class="box">
+        <label for="output">Output:</label>
+        <textarea id="output" rows="4" cols="50" readonly></textarea>
+    </div>
+</div>
+
+<script>
+    function encode() {
+        const key = document.getElementById('key').value;
+        const sentence = document.getElementById('sentence').value;
+        // Perform encoding logic here
+        const encodedText = key + sentence; // Placeholder encoding logic
+        document.getElementById('output').value = encodedText;
+    }
+
+    function decode() {
+        const key = document.getElementById('key2').value;
+        const sentence = document.getElementById('sentence2').value;
+        // Perform decoding logic here
+        const decodedText = sentence.replace(key, ''); // Placeholder decoding logic
+        document.getElementById('output').value = decodedText;
+    }
+</script>
+
+</body>
+</html>
