@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors - Dark Theme</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #121212; /* Dark background */
+            color: #f0f0f0; /* Light text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h2 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Button styles with glowing effect */
+        .bt {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            background-color: #1f1f1f; /* Dark button background */
+            color: #ffffff;
+            border: 1px solid #3498db; /* Blue border for accent */
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(52, 152, 219, 0.5), 0px 0px 20px rgba(52, 152, 219, 0.3);
+            transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+        }
+
+        /* Radiating light effect on hover */
+        .bt:hover {
+            background-color: #3498db; /* Blue hover effect */
+            transform: translateY(-3px);
+            box-shadow: 0px 0px 20px rgba(52, 152, 219, 1), 0px 0px 30px rgba(52, 152, 219, 0.8), 0px 0px 50px rgba(52, 152, 219, 0.6);
+        }
+
+        .bt:active {
+            transform: translateY(1px);
+        }
+
+        .result {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: #f0f0f0;
+            padding: 20px;
+            background-color: #1e1e1e; /* Dark result box background */
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Italicized "Computer selected" part */
+        .result em {
+            font-style: italic;
+            color: #3498db; /* Highlight color */
+        }
+
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 2rem;
+            }
+
+            .bt {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .result {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Rock Paper Scissors</h2>
+    <div>
+        <button class="bt" onclick="decider('rock')">Rock</button>
+        <button class="bt" onclick="decider('scissors')">Scissors</button>
+        <button class="bt" onclick="decider('paper')">Paper</button>
+    </div>
+
+    <div class="result" id="result">Make your move!</div>
+
+    <script>
+        function selector() {
+            const numbers = [1, 2, 3];
+            const random = Math.floor(Math.random() * numbers.length);
+            return random;
+        }
+
+        function game() {
+            var out = '';
+            var dummy = selector();
+            if (dummy === 1) {
+                out = 'rock';
+            } else if (dummy === 2) {
+                out = 'paper';
+            } else {
+                out = 'scissors';
+            }
+            return out;
+        }
+
+        function decider(userChoice) {
+            const comChoice = game();
+            var result = '';
+
+            if (comChoice === userChoice) {
+                result = 'It\'s a tie.';
+            } else if (
+                (userChoice === 'rock' && comChoice === 'scissors') ||
+                (userChoice === 'paper' && comChoice === 'rock') ||
+                (userChoice === 'scissors' && comChoice === 'paper')
+            ) {
+                result = 'You win :p';
+            } else {
+                result = 'You Lost :/';
+            }
+
+            // Italicized "Computer selected" part
+            document.getElementById('result').innerHTML = `<em>Computer chose ${comChoice}. ${result}</em>`;
+        }
+    </script>
+</body>
+
+</html>
+
